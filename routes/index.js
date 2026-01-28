@@ -2,8 +2,12 @@
 const router = require("express").Router();
 // /auth routes
 const authRoutes = require("./authRoutes.js");
+const apiRoutes = require("./api/index.js");
+
 // OAuth routes and redirects
-router.use("/auth", authRoutes)
+router.use("/auth", authRoutes);
+// API routes
+router.use("/api", apiRoutes);
  
 router.use((req, res) => {
     // error if the route is not correct
