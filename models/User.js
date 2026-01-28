@@ -19,10 +19,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         minlength: 6,
-        // TODO: set up full protection for OAuth, where password isn't provided, so use another field as a fallback once determined
+        // set up full protection for OAuth, where password isn't provided when verifying to ensure a user can be made
         validate: {
             validator: function(pass) {
-                return pass;
+                return this.googleId || pass;
             }
         }
     },
