@@ -19,7 +19,8 @@ passport.use(new GoogleStrategy({
                 user = await User.create({
                     username: profile.emails[0].value.split("@")[0],
                     email: profile.emails[0].value,
-                    googleId: profile.id
+                    googleId: profile.id,
+                    provider: 'google'
                 });
             }
 

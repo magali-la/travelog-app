@@ -25,6 +25,13 @@ const userSchema = new mongoose.Schema({
                 return pass;
             }
         }
+    },
+    // add google id field and provider for OAuth checking
+    googleId: {
+        type: String
+    },
+    provider: {
+        type: String
     }
 });
 
